@@ -1,4 +1,4 @@
-DROP TABLE employee;
+
 CREATE DATABASE testdb;
 use testdb;
 CREATE TABLE branch(
@@ -47,13 +47,14 @@ SELECT * FROM branch;
 SELECT employee.emp_id, employee.job_dec,branch.br_name 
 FROM employee 
 INNER JOIN branch 
-ON branch.branch_id = employee.branch_id
+ON branch.branch_id = employee.emp_id
 ORDER BY br_name;
+
 
 SELECT employee.emp_id, employee.job_dec,branch.br_name 
 FROM employee 
 LEFT JOIN branch 
-ON branch.branch_id = employee.branch_id
+ON branch.branch_id = employee.emp_id
 ORDER BY br_name;
 
 SELECT employee.emp_id, employee.job_dec,branch.br_name 
